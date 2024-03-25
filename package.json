@@ -10,6 +10,9 @@
     "Akiflow Inc. <developers@akiflow.com>"
   ],
   "main": "index.js",
+  "os": [
+    "darwin"
+  ],
   "scripts": {
     "start": "electron ./test/app/index.js",
     "configure": "node-gyp configure",
