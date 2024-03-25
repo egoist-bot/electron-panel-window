@@ -1,17 +1,19 @@
-var isMac = process.platform === 'darwin';
-var NativeExtension = isMac ? require('bindings')('NativeExtension') : undefined;
+const isMac = process.platform === "darwin"
+const NativeExtension = isMac
+  ? require("bindings")("NativeExtension")
+  : undefined
 
-module.exports = {
-  makeKeyWindow: function(window) {
-    if (!isMac) return;
-    return NativeExtension.MakeKeyWindow(window.getNativeWindowHandle());
-  },
-  makePanel: function(window) {
-    if (!isMac) return;
-    return NativeExtension.MakePanel(window.getNativeWindowHandle());
-  },
-  makeWindow: function(window) {
-    if (!isMac) return;
-    return NativeExtension.MakeWindow(window.getNativeWindowHandle());
-  }
+exports.makeKeyWindow = (window) => {
+  if (!isMac) return
+  return NativeExtension.MakeKeyWindow(window.getNativeWindowHandle())
+}
+
+exports.makePanel = (window) => {
+  if (!isMac) return
+  return NativeExtension.MakePanel(window.getNativeWindowHandle())
+}
+
+exports.makeWindow = (window) => {
+  if (!isMac) return
+  return NativeExtension.MakeWindow(window.getNativeWindowHandle())
 }
