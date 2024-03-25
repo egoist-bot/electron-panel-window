@@ -1,7 +1,7 @@
 {
   "name": "@egoist/electron-panel-window",
   "description": "Create Electron BrowserWindow's that act like Panels",
-  "version": "6.0.1",
+  "version": "6.0.2",
   "publishConfig": {
     "access": "public"
   },
