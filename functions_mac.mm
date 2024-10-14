@@ -7,6 +7,12 @@
 @interface PROPanel : NSWindow
 @end
 
+// Use the private API to prevent the panel from activating the app
+// because otherwise when you hide the panel, the app will be activated and it will try to show other windows
+@interface NSWindow (Private)
+- (void)_setPreventsActivation:(bool)preventsActivation;
+@end
+
 @implementation PROPanel
 - (NSWindowStyleMask)styleMask {
   return NSWindowStyleMaskTexturedBackground | NSWindowStyleMaskResizable | NSWindowStyleMaskFullSizeContentView | NSWindowStyleMaskNonactivatingPanel;
@@ -82,7 +88,9 @@ NAN_METHOD(MakePanel) {
 //   NSLog(@"class of main window after = %@", object_getClass(mainContentView.window));
 //   NSLog(@"stylemask after = %ld", mainContentView.window.styleMask);
 
-
+  // ref https://stackoverflow.com/a/37935781
+  object_setClass(mainContentView.window, [PROPanel class]);
+  [nswindow _setPreventsActivation:true];
 
   return info.GetReturnValue().Set(true);
 }
