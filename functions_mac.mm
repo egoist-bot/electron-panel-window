@@ -8,7 +8,7 @@
 @end
 
 // Use the private API to prevent the panel from activating the app
-// because otherwise when you hide the panel, the app will be activated and it will try to show other windows
+// because otherwise when you click on the panel, the app will be activated and it will try to show other windows when you hide the panel
 @interface NSWindow (Private)
 - (void)_setPreventsActivation:(bool)preventsActivation;
 @end
