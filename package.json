@@ -11,19 +11,19 @@
     "start": "electron ./test/app/index.js",
     "configure": "node-gyp configure",
     "prepare": "node-gyp build",
-    "build": "node-gyp rebuild --release --target=32.1.2  --dist-url=https://electronjs.org/headers",
+    "build": "node-gyp rebuild --release --target=38.7.1  --dist-url=https://electronjs.org/headers",
     "test": "mocha",
     "install": "node-gyp rebuild"
   },
   "devDependencies": {
-    "electron": "32.1.2",
-    "mocha": "10.2.0",
-    "node-gyp": "10.1.0",
+    "electron": "38.7.1",
+    "mocha": "11.7.5",
+    "node-gyp": "11.5.0",
     "spectron": "19.0.0"
   },
   "dependencies": {
     "bindings": "1.5.0",
-    "nan": "git+https://github.com/oc-soft/npm-nan.git"
+    "nan": "2.23.0"
   },
   "repository": {
     "type": "git",
@@ -37,6 +37,5 @@
   "directories": {
     "test": "test"
   },
-  "license": "ISC",
-  "packageManager": "pnpm@9.12.1+sha512.e5a7e52a4183a02d5931057f7a0dbff9d5e9ce3161e33fa68ae392125b79282a8a8a470a51dfc8a0ed86221442eb2fb57019b0990ed24fab519bf0e1bc5ccfc4"
+  "license": "ISC"
 }

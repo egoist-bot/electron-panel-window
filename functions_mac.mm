@@ -57,6 +57,8 @@
 - (void)removeObserver:(NSObject *)observer forKeyPath:(NSString *)keyPath {
   [self removeObserver:observer forKeyPath:keyPath context:NULL];
 }
+- (void)disableHeadlessMode {
+}
 @end
 
 Class electronWindowClass;
